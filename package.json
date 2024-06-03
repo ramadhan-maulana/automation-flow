@@ -12,7 +12,12 @@
   "dependencies": {
     "@types/node": "^20.12.13",
     "axios": "^1.7.2",
+    "crypto-js": "^4.2.0",
+    "moment-timezone": "^0.5.45",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2"
   }
 }
