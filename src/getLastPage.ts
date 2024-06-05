@@ -50,7 +50,7 @@ export const code = async (inputs: GetLastPageInputs) => {
             const client_id = inputs.client_id;
             const client_secret = inputs.client_secret;
             const method = 'GET';
-            const path = `/v2/talenta/v3/attendance/summary-report?date=${date}&limit=100&order=asc&page=${page}&sort=clock_in`;
+            const path = `/v2/talenta/v3/attendance/summary-report?date=${date}&limit=150&order=asc&page=${page}&sort=clock_in`;
             const currentDate = new Date().toUTCString();
             const requestLine = `${method} ${path} HTTP/1.1`;
             const payload = [`date: ${currentDate}`, requestLine].join('\n');
@@ -67,7 +67,7 @@ export const code = async (inputs: GetLastPageInputs) => {
         
           
           // Fetch data for page 1
-          let url = `https://api.mekari.com/v2/talenta/v3/attendance/summary-report?date=${currentDate}&limit=100&order=asc&page=1&sort=clock_in`;
+          let url = `https://api.mekari.com/v2/talenta/v3/attendance/summary-report?date=${currentDate}&limit=150&order=asc&page=1&sort=clock_in`;
           let headers = generateHmacHeader(currentDate, 1);
           let response = await axios.get(url, { headers });
           const data: Data = response.data;

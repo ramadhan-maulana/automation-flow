@@ -36,7 +36,7 @@ export const code = async (inputs: FetchAttendaceDataInputs) => {
             const client_id = inputs.client_id;
             const client_secret = inputs.client_secret;
             const method = 'GET';
-            const path = `/v2/talenta/v3/attendance/summary-report?date=${date}&limit=100&order=asc&page=${page}&sort=clock_in`;
+            const path = `/v2/talenta/v3/attendance/summary-report?date=${date}&limit=150&order=asc&page=${page}&sort=clock_in`;
         
             // Define current date and add 7 hours
             const currentDate = new Date().toUTCString();
@@ -56,7 +56,7 @@ export const code = async (inputs: FetchAttendaceDataInputs) => {
         
           // Function to fetch attendance data
           async function fetchAttendanceData(date: string, page: number) {
-            const url = `https://api.mekari.com/v2/talenta/v3/attendance/summary-report?date=${date}&limit=100&order=asc&page=${page}&sort=clock_in`;
+            const url = `https://api.mekari.com/v2/talenta/v3/attendance/summary-report?date=${date}&limit=150&order=asc&page=${page}&sort=clock_in`;
             const headers = generateHmacHeader(date, page);
             const response = await axios.get(url, { headers });
             const data: Data = response.data;
