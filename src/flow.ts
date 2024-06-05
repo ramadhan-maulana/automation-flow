@@ -32,8 +32,8 @@ async function executeFlow() {
         const setupConfig = await SetupConfig(inputs);
 
         const getLastPageInputs: GetLastPageInputs = { 
-            client_id: setupConfig.dummyProdCredent.client_id, 
-            client_secret: setupConfig.dummyProdCredent.client_secret 
+            client_id: setupConfig.credential.client_id, 
+            client_secret: setupConfig.credential.client_secret 
         };
         const getLastPage = await GetLastPage(getLastPageInputs);
         
@@ -56,8 +56,8 @@ async function executeFlow() {
                     dates: date,
                     startPage: getPage.start,
                     endPage: getPage.end,
-                    client_id: setupConfig.dummyProdCredent.client_id, 
-                    client_secret: setupConfig.dummyProdCredent.client_secret
+                    client_id: setupConfig.credential.client_id, 
+                    client_secret: setupConfig.credential.client_secret
                 };
 
                 const fetchAttendaceData = await FetchAttendanceData(fetchAttendaceDataInputs);
@@ -102,8 +102,8 @@ async function executeFlow() {
             const sendNotificationInputs: SendNotificationInputs = { 
                 payload: batch,
                 email_payload: talentaPayload,
-                client_id: setupConfig.dummyProdCredent.client_id, 
-                client_secret: setupConfig.dummyProdCredent.client_secret 
+                client_id: setupConfig.credential.client_id, 
+                client_secret: setupConfig.credential.client_secret 
             };
     
             const sendNotification = await SendNotification(sendNotificationInputs);
