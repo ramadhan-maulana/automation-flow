@@ -35,7 +35,7 @@ export const code = async (inputs: PayloadPushNotifInputs) => {
                 const receiverId = employee.user_id;
                 const name = employee.full_name;
                 // let result = emailPayload.replace('${name}', name);
-                let result = "x";
+                let result = name;
                 // Construct the payload for this employee
                 const payload: Payload = {
                     type: "general",

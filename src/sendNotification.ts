@@ -42,7 +42,8 @@ export const code = async (inputs: SendNotificationInputs) => {
                 try {
                     const receiverId = payload.receiver_id;
 
-                    payload.description = email_payload;
+                    const name = payload.description
+                    payload.description = email_payload.replace("${name}", name);
 
                     // Send notification to the current employee
                     const response = await axios.post(url, payload, { headers });

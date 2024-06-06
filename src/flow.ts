@@ -95,7 +95,7 @@ async function executeFlow() {
         // Convert the notifications_payload object to an array
         const data: Payload[] = Object.values(payloadPushNotif.notifications_payload);
 
-        const batchSize = 10;
+        const batchSize = 50;
         const batches = chunkArray(data, batchSize);
 
         for (const batch of batches) {

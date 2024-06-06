@@ -78,7 +78,7 @@ export const code = async (inputs: GetLastPageInputs) => {
         
           // const lastPage = data.data .pagination.last_page;
           // since phase one only expect 100-200 employee data, limit data only 2 pages
-          const lastPage = 2;
+          const lastPage = 1;
           //Generate array of numbers that are multiples of 10 up to lastPage
           let pages = [];
           for (let page = 10; page <= lastPage; page += 10) {
